@@ -1,0 +1,11 @@
+datasets/
+models/
+data/
+
+*.tar.gz
+
+*.h5
+
+*.txt
+
+*.midi
