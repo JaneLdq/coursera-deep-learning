@@ -10,7 +10,7 @@ Hyperparameter tuning, Regularization and Optimization
 * Bias / Variance
 
 Example | High Variance | High Bias | High Variance & High Bias | Low Bias & Low Variance
-----|----
+|---|---|---|---|---
 Training Set Error | 1% | 15% | 15% |0.%
 Dev Set Error | 11% | 16% | 30% | 1%
 
@@ -43,8 +43,9 @@ Dev Set Error | 11% | 16% | 30% | 1%
 #### Mini-batch gradient descent
 Use Batch with large data is too slow because for each gradient descent step you need go through the whole data set
 
+
 Mini-batch Size | Gradient Descent | Optimizing Cost Function | Tips
-----|----
+---|---|---|---
 1 | Stochastic Graient Descent (every example is its own mini-batch) <br> (X<sup>{1}</sup>, Y<sup>{1}</sup>) = (X<sup>(1)</sup>, Y<sup>(1)</sup>) <br>(X<sup>{2}</sup>, Y<sup>{2}</sup>) = (X<sup>(2)</sup>, Y<sup>(2)</sup>) ... | extremely noisy, won't ever converge<br>*lose speed up from vectorization* |
 (1, m) | Mini-batch Gradient Descent | In practice, fartest learning<br>1. vectiorization, <br>2. make progress without procesing entire training set | 1. Typical mini-batch size: 64, 128, 256, ... <br>2. Make sure mini-batch fits in CPU/GPU memory
 m | Batch Gradient Descent - (X<sup>{1}</sup>, Y<sup>{1}</sup>) = (X, Y) | low noise, large steps, <br>*too long per iteration* | Use Batch if training set is small, m <= 2000
@@ -65,7 +66,7 @@ The basic idea is to compute an exponentially weighted average of your gradients
 
 *For iteration t, compute dW, db using current mini-batch and then do gradient descent as formula shown below:*
 
-![rms_sdW_sdb](images/rms_sDW_sdb.gif) <br> ![rms_W_b](images/rms_w_b.gif)
+![rms_sdW_sdb](images/rms_sdW_sdb.gif) <br> ![rms_W_b](images/rms_w_b.gif)
 
 * **epsilon** is used to prevent the denominator to be zero
 
@@ -78,7 +79,7 @@ The basic idea is to compute an exponentially weighted average of your gradients
 * **Hyperparameters**
 
 Hyperparameters | Choices
-----|----
+---|---
 α|needs to be tune
 β1|0.9 (dW)
 β2|0.99 (dW<sup>2</sup>)
@@ -88,7 +89,7 @@ Hyperparameters | Choices
 * Formula decay
 
 Formula | Remarks
-----|----
+---|---
 ![epoch decay](images/lr_decay_epoch.gif)|
 ![exponentially decay](images/lr_decay_exp.gif)|exponentially decay
 ![constant decay](images/lr_decay_k.gif)| k is a hyperparameter, t is the current iteration
