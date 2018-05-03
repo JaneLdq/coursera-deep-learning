@@ -5,7 +5,10 @@
 **Problem Statement**
 
 This example is adapted from a real production application, but with details disguised to protect confidentiality.
-You are a famous researcher in the City of Peacetopia. The people of Peacetopia have a common characteristic: they are afraid of birds. To save them, you have to build an algorithm that will detect any bird flying over Peacetopia and alert the population.
+![bird_recognition](images/bird_recognition.png)
+
+You are a famous researcher in the City of Peacetopia. The people of Peacetopia have a common characteristic: they are afraid of birds. To save them, **you have to build an algorithm that will detect any bird flying over Peacetopia and alert the population**.
+
 The City Council gives you a dataset of 10,000,000 images of the sky above Peacetopia, taken from the city’s security cameras. They are labelled:
 * y = 0: There is no bird on the image
 * y = 1: There is a bird on the image
@@ -34,12 +37,12 @@ After further discussions, the city narrows down its criteria to:
 
 **If you had the three following models, which one would you choose?**
 
-- [] Test Accuracy 97%, RuntimeMemory 1 sec, size 3MB
-- [] Test Accuracy 99%, RuntimeMemory 13 sec, size 9MB
-- [] Test Accuracy 97%, RuntimeMemory 3 sec, size 2MB
+- [ ] Test Accuracy 97%, RuntimeMemory 1 sec, size 3MB
+- [ ] Test Accuracy 99%, RuntimeMemory 13 sec, size 9MB
+- [ ] Test Accuracy 97%, RuntimeMemory 3 sec, size 2MB
 - [x] Test Accuracy 99%, RuntimeMemory 9 sec, size 9MB
 
-> Correct! As soon as the runtime is less than 10 seconds you're good. So, you may simply maximize the test accuracy after you made sure the runtime is <10sec.
+    > Correct! As soon as the runtime is less than 10 seconds you're good. So, you may simply maximize the test accuracy after you made sure the runtime is <10sec.
 
 ## Question 3
 **Based on the city’s requests, which of the following would you say is true?**
@@ -67,7 +70,7 @@ After setting up your train/dev/test sets, the City Council comes across another
 - [ ] True
 - [x] False
 
->Adding this data to the training set will change the training set distribution. However, it is not a problem to have different training and dev distribution. On the contrary, it would be very problematic to have different dev and test set distributions.
+    >Adding this data to the training set will change the training set distribution. However, it is not a problem to have different training and dev distribution. On the contrary, it would be very problematic to have different dev and test set distributions.
 
 ## Question 6
 **One member of the City Council knows a little about machine learning, and thinks you should add the 1,000,000 citizens’ data images to the test set. You object because:**

@@ -2,9 +2,13 @@
 Improving Deep Neural Networks: Hyperparameter tuning, Regularization and Optimization
 
 ## Setting up Machine Learning Application
-* Train / Dev / Test sets
-    * Common practice: 70/30/ . or 60/20/ 20
-    * Big data: 98/1/1
+* Train / Dev / Test Set Size
+
+|-| Train | Dev | Test|
+|---|---|---|---|
+|Common Practice #1 | 70% | 30% | 0 |
+|Common Practice #2 | 60% | 20% | 20% |
+|Big Data | 98% | 1% | 1% |
 
 
 * Bias / Variance
@@ -62,7 +66,7 @@ The basic idea is to compute an exponentially weighted average of your gradients
 
 * **Hyperparameters**: α(learning rate), β = 0.9
 
-#### RMSprop
+#### :bulb: RMSprop
 
 *For iteration t, compute dW, db using current mini-batch and then do gradient descent as formula shown below:*
 
@@ -110,8 +114,8 @@ Note: 1 epoch = 1 pass through data
 
 Approach | When to use | How
 --- | --- | ---
-Pandas: Babysitting one model | having huge data set, limited computational capacity | babysitting the model one day at a time
-Caviar: Training many models in parallel | having enough computational resources| Train multiple models at the same time
+:panda_face: Pandas: Babysitting one model | having huge data set, limited computational capacity | babysitting the model one day at a time
+:tropical_fish: Caviar: Training many models in parallel | having enough computational resources| Train multiple models at the same time
 
 ## Batch Normalization - Normalizing activations
 Given some intermediate values in NN, do the normalization as described below:
