@@ -4,3 +4,4 @@
 Quick links to each course notes and assignments:
 * [C1 - Neural Networks and Deep Learning](/C1_Neural_Networks_and_Deep_Learning)
 * [C2 - Improving Deep Neural Networks](/C2_Improving_Deep_Neural_Networks)
+* [C3 - Structuring Machine Learning Project](/C3_Structuring_Machine_Learning_Projects)

@@ -1,4 +1,8 @@
 # Course 3 - Structuring Machine Learning Projects
+## Orthogonalization
+:pushpin: Orthogonalization Process for ML
+
+![Orthogonalization process](images/Orthogonalization.png)
 
 ## Evaluation Metric
 #### Single number evaluation metrics
@@ -67,3 +71,9 @@ Error | Tactics
 ---|---
 Avoidable Bias | Train bigger model <br>Train longer/better optimization algorithms <br>NN architecture/hyperparameters search
 Variance Problem | More data <br>Regularization
+
+## Error Analysis
+### How to address data mismatch?
+1. Carry out manual error analysis to try to understand difference between training and dev/test sets
+2. Make training data more similar; or collect more similar to dev/test sets
+    - * Artificial data synthesis
