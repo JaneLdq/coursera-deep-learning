@@ -71,6 +71,7 @@ The basic idea is to compute an exponentially weighted average of your gradients
 * **epsilon** is used to prevent the denominator to be zero
 
 #### Adam Optimization Algorithm
+Adam algorithm combines the Momentum and RMS algorithms togather.
 
 *Initialize v<sub>dW</sub>=0, S<sub>dW</sub>=0, v<sub>db</sub>=0, S<sub>db</sub>=0, <br>For iteration t, compute dW, db using current mini-batch and then do the gradient descent as formula shown below:*
 
@@ -122,11 +123,8 @@ And then use z_tilde isntead of z, and keep the cache of these gammas and betas 
 
 ### Batch Norm as Regularization
 Each mini-batch is scaled by the mean/variance computed on just that mini-batch. This adds some noise to the value z<sup>[l]</sup> within that minibatch. So similar to dropout, it adds some noise to each hidden layer's activations. This has a slight regularization effect. <br>
+
 *Because the noise added is quite small, this is not a huge regularization effect, and you might choose to use batch norm together with dropout, and you might use batch norm together with dropouts if you want the more powerful regularization effect of dropout.*
 
 ## Multi-class Classification
-* [Softmax Regression](http://ufldl.stanford.edu/tutorial/supervised/SoftmaxRegression/)
-
-## References
-* [Coursera - Improving Deep Neural Networks](https://www.coursera.org/learn/deep-neural-network/home/welcome)
-* [UFLDL Tutorial - Softmax Regression](http://ufldl.stanford.edu/tutorial/supervised/SoftmaxRegression/)
+### Softmax Regression
