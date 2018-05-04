@@ -76,4 +76,26 @@ Variance Problem | More data <br>Regularization
 ### How to address data mismatch?
 1. Carry out manual error analysis to try to understand difference between training and dev/test sets
 2. Make training data more similar; or collect more similar to dev/test sets
-    - * Artificial data synthesis
+    * Artificial data synthesis
+
+## Transfer Learning
+Transfer Learning focuses on storing knowledge gained while solving one problem and applying it to a different but related problem.
+
+Example:
+You have a trained neural network for image recognition task, you train all of the usual parameters for the neural network, all the weights and layers, and you now having something that learns to make image recognition predictions. 
+Now, what you want to do tranfer learning is to retrain the neural network on a new radiology data set.
+
+There are two options for retrain:
+1. When you only have a small radiology dataset, you can just retrain the weights of the last layer
+2. If you have enough data, you can retrain all the parameters in the network. If you do so, then we can seperate the whole trainig procss into two phase:
+    * Pre-training: use image recognitions data to pre-initialize or really pre-train the weights of the NN
+    * Fine tunning: training on the radiology data after you update all the weight
+
+*You've taken knowledge learned (low level features such as detecting edges, curves or positive objects, etc.) from image recognition and applied it or transferred it to radiology diagnosis.*
+
+### when does transfer learning make sense?
+Transfer learning makes sense when you have a lot of data for the problem you're transferring from and usually relatively less data for the problem you're transferring to.
+
+If you're trying to learn from some Task A and transfer some of the knowledge to some Task B, then transfer learning makes sense when Task A and B have the same input X. In previous example, A and B both have images as input. 
+
+Transfer learning will tend to make more sense if you suspect that low level features from Task A could be helpful for learning Task B. And in the earlier examples, maybe learning image recognition teaches you enough about images to have a radiology diagnosis.
