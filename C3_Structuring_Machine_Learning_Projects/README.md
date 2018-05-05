@@ -23,12 +23,11 @@ Satisficing Metric | it has just to be good enough
 Classifier | Accuracy | Running time | -
 --- | --- | --- | ---
 A | 90% | 80ms |
-B | 92% | 95ms | √
+B | 92% | 95ms | :heavy_check_mark:
 C | 95% | 1500ms |
 
-Cost = accuracy - 0.5 * runningTime
-
-Suppose You want to maximize accuracy and subject to running time <= 100ms, so the Accuracy is the optimizing metric and runnint time is the satisficing metric here.
+>Cost = accuracy - 0.5 * runningTime<br>
+>Suppose You want to maximize accuracy and subject to running time <= 100ms, so the Accuracy is the optimizing metric and runnint time is the satisficing metric here.
 
 
 ## Train/Dev/Test Distribution
@@ -81,8 +80,8 @@ Variance Problem | More data <br>Regularization
 ## Transfer Learning
 Transfer Learning focuses on storing knowledge gained while solving one problem and applying it to a different but related problem.
 
-Example:
-You have a trained neural network for image recognition task, you train all of the usual parameters for the neural network, all the weights and layers, and you now having something that learns to make image recognition predictions. 
+:chestnut: **Example**
+>You have a trained neural network for image recognition task, you train all of the usual parameters for the neural network, all the weights and layers, and you now having something that learns to make image recognition predictions. 
 Now, what you want to do tranfer learning is to retrain the neural network on a new radiology data set.
 
 There are two options for retrain:
@@ -93,9 +92,36 @@ There are two options for retrain:
 
 *You've taken knowledge learned (low level features such as detecting edges, curves or positive objects, etc.) from image recognition and applied it or transferred it to radiology diagnosis.*
 
-### when does transfer learning make sense?
+### When does transfer learning make sense?
 Transfer learning makes sense when you have a lot of data for the problem you're transferring from and usually relatively less data for the problem you're transferring to.
 
 If you're trying to learn from some Task A and transfer some of the knowledge to some Task B, then transfer learning makes sense when Task A and B have the same input X. In previous example, A and B both have images as input. 
 
 Transfer learning will tend to make more sense if you suspect that low level features from Task A could be helpful for learning Task B. And in the earlier examples, maybe learning image recognition teaches you enough about images to have a radiology diagnosis.
+
+## Multi-task Learning
+In multi-task learning, you have one neural network do several things at the same time.
+
+:chestnut: **Example**
+>Building a NN to tell you does each image have four different kinds(pedestrians, cars, traffic lights, stop signs) of objects in it.
+
+### When does multi-task learning make sense?
+* Traning on a set of tasks that could benefit from having shared lower-level features
+* Usually: Amount of data you have for each task is quite similar 
+* Can train a big enough neural network to do well on all the tasks(If it is not big enough, then it may hurt the performance)
+
+## End-to-end Deep Learning
+In contrast to a pipelien with a lot of stages to solve a problem, an end-to-end deep learning train a huge neural network to just take the input and directly output the final result you want.
+
+### Whether to use end-to-end deep learning?
+
+**Pros and cons of end-to-end deep learning**
+
+:heart: Pros | :broken_heart: Cons
+--- | ---
+Let the data speek | May need large amount of data
+Less hand-designing of componets needed | Excludes potentially useful hand-designed components
+
+:key: **Key question**
+
+**Do you hanve sufficient data to learn a function of the complexity needed to map x to y?**
